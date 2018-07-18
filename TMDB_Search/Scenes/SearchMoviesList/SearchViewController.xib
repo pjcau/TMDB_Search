@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchViewController" customModule="CareemAssignmentJonnyCau" customModuleProvider="target">
+            <connections>
+                <outlet property="dataTableView" destination="TC7-tN-bhT" id="Abb-NY-5pR"/>
+                <outlet property="searchBar" destination="NkA-x7-0Xn" id="NgY-jI-nJo"/>
+                <outlet property="suggestionsTableView" destination="vU0-Ct-rKz" id="9ht-9S-IzK"/>
+                <outlet property="view" destination="M8p-wl-jpc" id="twn-aD-ssN"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="M8p-wl-jpc">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TC7-tN-bhT" userLabel="MoviesTableView">
+                    <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="NkA-x7-0Xn">
+                    <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="Xaf-iK-KmL"/>
+                    </constraints>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
+                <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vU0-Ct-rKz" userLabel="suggestionsTableView">
+                    <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vU0-Ct-rKz" firstAttribute="centerX" secondItem="M8p-wl-jpc" secondAttribute="centerX" id="4Vl-Xe-R4h"/>
+                <constraint firstItem="TC7-tN-bhT" firstAttribute="top" secondItem="NkA-x7-0Xn" secondAttribute="bottom" id="FjH-70-I4W"/>
+                <constraint firstItem="TC7-tN-bhT" firstAttribute="centerX" secondItem="M8p-wl-jpc" secondAttribute="centerX" id="Gf8-Ua-6RS"/>
+                <constraint firstItem="vU0-Ct-rKz" firstAttribute="trailing" secondItem="hfS-QA-vSB" secondAttribute="trailing" id="HnL-LM-gir"/>
+                <constraint firstItem="vU0-Ct-rKz" firstAttribute="bottom" secondItem="hfS-QA-vSB" secondAttribute="bottom" id="Ld6-jj-Bo9"/>
+                <constraint firstItem="NkA-x7-0Xn" firstAttribute="top" secondItem="hfS-QA-vSB" secondAttribute="top" id="SVG-ti-Ft2"/>
+                <constraint firstItem="TC7-tN-bhT" firstAttribute="bottom" secondItem="hfS-QA-vSB" secondAttribute="bottom" id="gJ2-tS-BG3"/>
+                <constraint firstItem="NkA-x7-0Xn" firstAttribute="trailing" secondItem="hfS-QA-vSB" secondAttribute="trailing" id="h8y-8G-sgU"/>
+                <constraint firstItem="NkA-x7-0Xn" firstAttribute="centerX" secondItem="M8p-wl-jpc" secondAttribute="centerX" id="ia4-d4-pg5"/>
+                <constraint firstItem="TC7-tN-bhT" firstAttribute="leading" secondItem="hfS-QA-vSB" secondAttribute="leading" id="lln-Ck-a36"/>
+                <constraint firstItem="vU0-Ct-rKz" firstAttribute="leading" secondItem="hfS-QA-vSB" secondAttribute="leading" id="o9c-13-cXv"/>
+                <constraint firstItem="TC7-tN-bhT" firstAttribute="trailing" secondItem="hfS-QA-vSB" secondAttribute="trailing" id="sIC-CT-H89"/>
+                <constraint firstItem="vU0-Ct-rKz" firstAttribute="top" secondItem="NkA-x7-0Xn" secondAttribute="bottom" id="t38-83-Gv1"/>
+                <constraint firstItem="NkA-x7-0Xn" firstAttribute="leading" secondItem="hfS-QA-vSB" secondAttribute="leading" id="w5g-Pq-f8a"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="hfS-QA-vSB"/>
+            <point key="canvasLocation" x="-398.5" y="92.5"/>
+        </view>
+    </objects>
+</document>
