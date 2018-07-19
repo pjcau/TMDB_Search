@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="445" id="uD4-pK-RHt" customClass="SearchViewCell" customModule="CareemAssignmentJonnyCau" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="445" id="uD4-pK-RHt" customClass="SearchViewCell" customModule="TMDB_Search" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="445"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uD4-pK-RHt" id="Qk5-wk-rSz">
@@ -56,7 +56,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
+                                <color key="highlightedColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -68,7 +68,6 @@
                             <constraint firstItem="01Q-LN-ECv" firstAttribute="leading" secondItem="O8n-iA-loT" secondAttribute="leading" id="JWN-bm-6lW"/>
                             <constraint firstItem="jf1-uh-l8Q" firstAttribute="top" secondItem="O8n-iA-loT" secondAttribute="top" constant="8" id="Lh6-r1-67K"/>
                             <constraint firstItem="eAe-zf-Au1" firstAttribute="top" secondItem="O8n-iA-loT" secondAttribute="top" constant="8" id="OfH-zR-5iX"/>
-                            <constraint firstAttribute="width" constant="343" id="Yok-pd-mWv"/>
                             <constraint firstItem="i91-aO-KY6" firstAttribute="leading" secondItem="O8n-iA-loT" secondAttribute="leading" constant="8" id="abI-IZ-g0w"/>
                             <constraint firstItem="IJT-S3-wXk" firstAttribute="centerX" secondItem="O8n-iA-loT" secondAttribute="centerX" id="ans-Pb-bsA"/>
                             <constraint firstAttribute="trailing" secondItem="eAe-zf-Au1" secondAttribute="trailing" constant="8" id="cc7-g6-0ch"/>
@@ -83,7 +82,6 @@
                     <constraint firstItem="O8n-iA-loT" firstAttribute="top" secondItem="Qk5-wk-rSz" secondAttribute="topMargin" id="69H-IC-DiZ"/>
                     <constraint firstItem="O8n-iA-loT" firstAttribute="trailing" secondItem="Qk5-wk-rSz" secondAttribute="trailingMargin" id="6wt-q1-R49"/>
                     <constraint firstItem="O8n-iA-loT" firstAttribute="bottom" secondItem="Qk5-wk-rSz" secondAttribute="bottomMargin" id="Bkw-JH-OWz"/>
-                    <constraint firstItem="O8n-iA-loT" firstAttribute="centerX" secondItem="Qk5-wk-rSz" secondAttribute="centerX" id="JjP-Sf-Lee"/>
                     <constraint firstItem="O8n-iA-loT" firstAttribute="leading" secondItem="Qk5-wk-rSz" secondAttribute="leadingMargin" id="RSd-sD-1Q7"/>
                 </constraints>
             </tableViewCellContentView>

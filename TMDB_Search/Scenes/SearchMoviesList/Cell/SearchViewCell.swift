@@ -58,7 +58,7 @@ class SearchViewCell: UITableViewCell, BindableType, NibReusable {
         let outputs = viewModel.outputs
         let this = SearchViewCell.self
         
-        Observable.concat(outputs.smallPhoto, outputs.regularPhoto, outputs.hightPhoto )
+        Observable.concat(outputs.smallPhoto, outputs.regularPhoto, outputs.hightPhoto)
             .mapToURL()
             .flatMap { this.imagePipeline.rx.loadImage(with: $0) }
             .map { $0.image }
