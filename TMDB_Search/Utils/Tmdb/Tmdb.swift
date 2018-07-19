@@ -35,9 +35,7 @@ extension Tmdb: TargetType  {
     var path: String {
         switch self {
         case .search(_,_):
-           //return "/search/movie?api_key=\(self.apiKey)&query=\(params.movieText ?? "")&page=\(params.perPage ?? 1)"
             return "/search/movie"
-
         }
     }
     

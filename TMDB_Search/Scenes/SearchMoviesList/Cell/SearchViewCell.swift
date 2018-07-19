@@ -54,7 +54,7 @@ class SearchViewCell: UITableViewCell, BindableType, NibReusable {
     // MARK: BindableType
     
     func bindViewModel() {
-        _ = viewModel.inputs
+       _  = viewModel.inputs
         let outputs = viewModel.outputs
         let this = SearchViewCell.self
         

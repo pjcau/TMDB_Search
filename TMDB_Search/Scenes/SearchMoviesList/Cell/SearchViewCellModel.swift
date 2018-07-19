@@ -11,7 +11,6 @@ import RxSwift
 import Action
 
 protocol SearchViewCellModelInput: MovieViewModelInput {
-    var movieDetailsAction: Action<Movie, Movie> { get }
 }
 
 protocol SearchViewCellModelOutput: MovieViewModelOutput {
@@ -40,15 +39,6 @@ class SearchViewCellModel: MovieViewModel,
     
     var outputs: SearchViewCellModelOutput { return self }
     override var movieViewModelOutputs: MovieViewModelOutput { return outputs }
-    
-    // MARK: Input
-    lazy var movieDetailsAction: Action<Movie, Movie> = {
-        return Action<Movie, Movie> { [unowned self] movie in
-            //let viewModel = MovieDetailsViewModel(movie: movie)
-            //self.sceneCoordinator.transition(to: Scene.photoDetails(viewModel))
-            return .just(movie)
-        }
-    }()
     
     // MARK: Output
     var moviePosterImage: Observable<String>!

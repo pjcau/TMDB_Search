@@ -16,7 +16,6 @@ class DataService {
     
     lazy var config: Realm.Configuration = {
         var config = Realm.Configuration.defaultConfiguration
-        //config.inMemoryIdentifier = UUID().uuidString
         return config
     }()
     

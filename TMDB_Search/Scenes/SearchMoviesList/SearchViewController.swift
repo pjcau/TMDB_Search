@@ -54,8 +54,6 @@ class SearchViewController: UIViewController, NibLoadable, BindableType {
         searchBar.rx.tapGesture()
             .when(.recognized)
             .subscribe(onNext: { _ in
-                //react to taps
-                print("tapped searchbar")
                 self.showMoviesTable(false)
             })
             .disposed(by: disposeBag)
@@ -93,6 +91,17 @@ class SearchViewController: UIViewController, NibLoadable, BindableType {
             .distinctUntilChanged()
             .bind(to: inputs.loadMore)
             .disposed(by: disposeBag)
+       
+        Observable.combineLatest(dataTableView.rx.itemSelected, outputs.movies)
+            .subscribe({ event in
+                if let row = event.element?.0.row , let movies = event.element?.1{
+                    guard let movie = movies[safe:UInt(row)] else {
+                        return
+                    }
+                    inputs.movieDetailsAction.execute(movie)
+                }
+             })
+        .disposed(by: disposeBag)
         
         // Create Suggestion Table
         let suggestionsDataSource = RxTableViewRealmDataSource<Query>(cellIdentifier: "QueryCell", cellType: QueryCell.self) {cell, ip, query in
@@ -103,7 +112,6 @@ class SearchViewController: UIViewController, NibLoadable, BindableType {
         outputs.queryResults
             .bind(to: suggestionsTableView.rx.realmChanges(suggestionsDataSource))
             .disposed(by: disposeBag)
-        
         
         // react on cell taps
         suggestionsTableView.rx.realmModelSelected(Query.self)
@@ -117,6 +125,7 @@ class SearchViewController: UIViewController, NibLoadable, BindableType {
                 self.searchQueryOnWeb()
             })
             .disposed(by: disposeBag)
+        
     }
     
     // MARK: UI

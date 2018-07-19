@@ -19,3 +19,9 @@ extension Array where Element: Equatable {
         self = result
     }
 }
+
+extension Array {
+    subscript (safe index: UInt) -> Element? {
+        return Int(index) < count ? self[Int(index)] : nil
+    }
+}

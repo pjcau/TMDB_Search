@@ -13,7 +13,7 @@ import Moya
 
 struct MovieService: MovieServiceType {
 
-    private var tmdb = MoyaProvider<Tmdb> ( plugins: [NetworkLoggerPlugin(verbose: true)])
+    private var tmdb = MoyaProvider<Tmdb> (/* plugins: [NetworkLoggerPlugin(verbose: true)]*/)
         
     init(tmdb: MoyaProvider<Tmdb> = MoyaProvider<Tmdb>()) {
         self.tmdb = tmdb

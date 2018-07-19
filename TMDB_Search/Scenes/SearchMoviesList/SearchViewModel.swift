@@ -10,7 +10,6 @@ import Foundation
 import RxSwift
 import Action
 import RxSwiftExt
-import RxViewModel
 import RealmSwift
 import RxDataSources
 import RxRealm
@@ -27,6 +26,9 @@ protocol SearchViewModelInput {
     
     // trigger the search bar
     func triggerDone()
+    
+    //Go to Movie Detail Action
+    var movieDetailsAction: Action<Movie, Movie> { get }
     
 }
 
@@ -60,6 +62,14 @@ class SearchViewModel: SearchViewModelType, SearchViewModelInput, SearchViewMode
     var loadMore = BehaviorSubject<Bool>(value: false)
     var searchString = BehaviorSubject<String?>(value: nil)
 
+    // MARK: Input
+    lazy var movieDetailsAction: Action<Movie, Movie> = {
+        return Action<Movie, Movie> { [unowned self] movie in
+            let viewModel = DetailMovieViewModel(movie: movie)
+            self.sceneCoordinator.transition(to: Scene.movieDetails(viewModel))
+            return .just(movie)
+        }
+    }()
 
     lazy var alertAction: Action<String, Void> = {
         Action<String, Void> { [unowned self] message in
@@ -98,9 +108,12 @@ class SearchViewModel: SearchViewModelType, SearchViewModelInput, SearchViewMode
         
         // RxRealm to get Observable<Results>
         let realm = try! Realm(configuration: dataService.config)
-        queryResults = Observable.changeset(from: realm.objects(Suggestion.self).first!.queries.sorted(byKeyPath: "createdAt", ascending:false))
+        queryResults = Observable.changeset(from: realm.objects(Suggestion.self).first!.queries
+            .sorted(byKeyPath: "createdAt", ascending:false))
+            //.takeLast(30)
             .share()
         
+        // Search to get Observable<Movie>
         var currentPageNumber = 1
         var moviesArray = [Movie]([])
         
