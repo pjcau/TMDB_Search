@@ -92,7 +92,7 @@ class SearchViewController: UIViewController, NibLoadable, BindableType {
             .bind(to: inputs.loadMore)
             .disposed(by: disposeBag)
        
-        Observable.combineLatest(dataTableView.rx.itemSelected, outputs.movies)
+        Observable.zip(dataTableView.rx.itemSelected, outputs.movies)
             .subscribe({ event in
                 if let row = event.element?.0.row , let movies = event.element?.1{
                     guard let movie = movies[safe:UInt(row)] else {
