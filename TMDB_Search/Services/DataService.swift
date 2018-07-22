@@ -13,7 +13,7 @@ import RxSwift
 class DataService {
     
     private let bag = DisposeBag()
-    
+    let totalLastquery = 10
     lazy var config: Realm.Configuration = {
         var config = Realm.Configuration.defaultConfiguration
         return config
@@ -44,6 +44,9 @@ class DataService {
             let query = string.trimmingCharacters(in: NSCharacterSet.whitespaces)
             
             if !suggestion.queries.contains(where: {$0.text == query}) {
+                if totalLastquery <= suggestion.queries.count {
+                    deleteLastQuery()
+                }
                 createQuery(query)
             }
         }
@@ -67,6 +70,16 @@ class DataService {
             suggestion.queries.append(query)
     }
 
+    
+    private func deleteLastQuery(){
+        guard let suggestion = realm.objects(Suggestion.self).first else   {
+            return
+        }
+        suggestion.queries.removeFirst()
+    }
+
+    
+    
 
     
 }

@@ -12,6 +12,5 @@ import RealmSwift
 class Query: Object {
     @objc dynamic var text:String = ""
     @objc dynamic var createdAt = Date()
-
 }
 

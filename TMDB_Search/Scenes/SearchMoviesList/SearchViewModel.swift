@@ -110,9 +110,8 @@ class SearchViewModel: SearchViewModelType, SearchViewModelInput, SearchViewMode
         let realm = try! Realm(configuration: dataService.config)
         queryResults = Observable.changeset(from: realm.objects(Suggestion.self).first!.queries
             .sorted(byKeyPath: "createdAt", ascending:false))
-            //.takeLast(30)
             .share()
-        
+
         // Search to get Observable<Movie>
         var currentPageNumber = 1
         var moviesArray = [Movie]([])
@@ -182,3 +181,4 @@ class SearchViewModel: SearchViewModelType, SearchViewModelInput, SearchViewMode
         
     }
 }
+ 

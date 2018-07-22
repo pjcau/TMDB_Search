@@ -29,7 +29,6 @@ struct MovieService: MovieServiceType {
                 .filterSuccessfulStatusCodes()
                 .map(SearchMovie.self)
                 .map { $0.results }
-                .debug()
                 .asObservable()
                 .unwrap()
                 .map(Result.success)
