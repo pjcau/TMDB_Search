@@ -90,6 +90,5 @@ class DetailMovieViewController: UIViewController, NibLoadable, BindableType {
     private func configureAll() {
 
     }
-    
-    
+
 }
