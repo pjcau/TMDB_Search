@@ -6,22 +6,104 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailMovieViewController" customModule="TMDB_Search" customModuleProvider="target">
             <connections>
+                <outlet property="originaltitleLabel" destination="qzh-25-oPB" id="xd3-aY-LdJ"/>
+                <outlet property="plotLabel" destination="QhJ-z6-Kr7" id="Ga7-VP-09c"/>
+                <outlet property="plotText" destination="KFp-Oh-lTm" id="oe6-Dj-z82"/>
+                <outlet property="popularityLabel" destination="Ier-YQ-J2R" id="GP3-UT-dNi"/>
+                <outlet property="posterImage" destination="meI-ug-16k" id="iPN-ow-H5o"/>
+                <outlet property="releaseDateLabel" destination="Mdl-cC-LwN" id="iFB-7x-ViK"/>
                 <outlet property="view" destination="qUp-5k-thn" id="q2i-Gl-1eB"/>
+                <outlet property="voteAverageLabel" destination="tMY-xf-HfM" id="3ws-Vg-PiL"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="qUp-5k-thn">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="meI-ug-16k" userLabel="posterImage">
+                    <rect key="frame" x="16" y="31" width="95" height="158"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="158" id="DdN-bC-hCf"/>
+                        <constraint firstAttribute="width" constant="95" id="O1D-9g-Hh6"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plot" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QhJ-z6-Kr7" userLabel="Plot Label">
+                    <rect key="frame" x="17" y="213" width="28.5" height="19.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KFp-Oh-lTm" userLabel="plot text">
+                    <rect key="frame" x="13" y="234.5" width="352" height="200"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="9IM-Ub-jse"/>
+                    </constraints>
+                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oringinal title:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qzh-25-oPB" userLabel="Oringinal title label">
+                    <rect key="frame" x="135" y="39" width="225" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" priority="999" constant="21" id="aaw-4v-PrT"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Release date:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mdl-cC-LwN" userLabel="Release date: label">
+                    <rect key="frame" x="137" y="100" width="222" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popularity:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ier-YQ-J2R" userLabel="Popularity label">
+                    <rect key="frame" x="17" y="469.5" width="342" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vote Average:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMY-xf-HfM" userLabel="Vote Average label">
+                    <rect key="frame" x="17" y="499.5" width="342" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="KFp-Oh-lTm" firstAttribute="centerX" secondItem="Ier-YQ-J2R" secondAttribute="centerX" constant="1" id="3Qz-si-wUe"/>
+                <constraint firstItem="qzh-25-oPB" firstAttribute="trailing" secondItem="KFp-Oh-lTm" secondAttribute="trailing" constant="-5" id="411-dY-T7Q"/>
+                <constraint firstItem="qzh-25-oPB" firstAttribute="leading" secondItem="meI-ug-16k" secondAttribute="trailing" constant="24" id="582-tl-g3a"/>
+                <constraint firstItem="meI-ug-16k" firstAttribute="top" secondItem="pSd-z0-Pbg" secondAttribute="top" constant="11" id="7Bl-kI-5Gj"/>
+                <constraint firstItem="Ier-YQ-J2R" firstAttribute="leading" secondItem="tMY-xf-HfM" secondAttribute="leading" id="7R4-lE-jo0"/>
+                <constraint firstItem="qzh-25-oPB" firstAttribute="centerX" secondItem="Mdl-cC-LwN" secondAttribute="centerX" id="7ep-Wf-inH"/>
+                <constraint firstItem="Mdl-cC-LwN" firstAttribute="trailing" secondItem="qUp-5k-thn" secondAttribute="trailingMargin" id="FTh-lG-gl3"/>
+                <constraint firstItem="meI-ug-16k" firstAttribute="centerY" secondItem="Mdl-cC-LwN" secondAttribute="centerY" id="K1T-Pj-Vrg"/>
+                <constraint firstItem="QhJ-z6-Kr7" firstAttribute="top" secondItem="meI-ug-16k" secondAttribute="bottom" constant="24" id="N5s-yf-rsO"/>
+                <constraint firstItem="QhJ-z6-Kr7" firstAttribute="leading" secondItem="Ier-YQ-J2R" secondAttribute="leading" id="NJu-jU-WhO"/>
+                <constraint firstItem="Mdl-cC-LwN" firstAttribute="leading" secondItem="meI-ug-16k" secondAttribute="trailing" constant="26" id="W6T-SZ-bgN"/>
+                <constraint firstItem="KFp-Oh-lTm" firstAttribute="leading" secondItem="pSd-z0-Pbg" secondAttribute="leading" constant="13" id="YNB-vh-RWQ"/>
+                <constraint firstItem="KFp-Oh-lTm" firstAttribute="top" secondItem="QhJ-z6-Kr7" secondAttribute="bottom" constant="2" id="i1r-PE-QFB"/>
+                <constraint firstItem="Mdl-cC-LwN" firstAttribute="trailing" secondItem="Ier-YQ-J2R" secondAttribute="trailing" id="jwH-Sd-D5g"/>
+                <constraint firstItem="Mdl-cC-LwN" firstAttribute="trailing" secondItem="tMY-xf-HfM" secondAttribute="trailing" id="kCc-4j-zWK"/>
+                <constraint firstItem="Ier-YQ-J2R" firstAttribute="top" secondItem="KFp-Oh-lTm" secondAttribute="bottom" constant="35" id="nwd-9w-FUf"/>
+                <constraint firstItem="Mdl-cC-LwN" firstAttribute="top" secondItem="qzh-25-oPB" secondAttribute="bottom" priority="999" constant="40" id="sM3-kM-18N"/>
+                <constraint firstItem="meI-ug-16k" firstAttribute="leading" secondItem="qUp-5k-thn" secondAttribute="leadingMargin" id="uZU-fk-07A"/>
+                <constraint firstItem="qzh-25-oPB" firstAttribute="top" secondItem="pSd-z0-Pbg" secondAttribute="top" constant="19" id="vXZ-xT-bhQ"/>
+                <constraint firstItem="tMY-xf-HfM" firstAttribute="top" secondItem="Ier-YQ-J2R" secondAttribute="bottom" constant="12" id="wth-b3-JVF"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="pSd-z0-Pbg"/>
-            <point key="canvasLocation" x="-156" y="18"/>
+            <point key="canvasLocation" x="-156.5" y="-252.5"/>
         </view>
     </objects>
 </document>

@@ -121,7 +121,8 @@ class SearchViewController: UIViewController, NibLoadable, BindableType {
                 guard let query = query.element else {
                     return
                 }
-                inputs.searchString.onNext(query)
+ 
+                self.updateSearchBar(query)
                 self.searchQueryOnWeb()
             })
             .disposed(by: disposeBag)
@@ -129,6 +130,13 @@ class SearchViewController: UIViewController, NibLoadable, BindableType {
     }
     
     // MARK: UI
+    
+    private func updateSearchBar( _ query:String){
+        let inputs = viewModel.inputs
+
+        self.searchBar.text = query
+        inputs.searchString.onNext(query)
+    }
     
     private func searchQueryOnWeb(){
         viewModel.inputs.triggerDone()

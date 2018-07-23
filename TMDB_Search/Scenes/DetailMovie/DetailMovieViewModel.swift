@@ -17,7 +17,9 @@ protocol DetailMovieViewModelInput : MovieViewModelInput {
 }
 
 protocol DetailMovieViewModelOutput : MovieViewModelOutput{
-    
+    var originalTitle: Observable<String>! { get }
+    var voteAverage: Observable<Double>! { get }
+    var popularityText: Observable<Double>! { get }
     
 }
 
@@ -28,13 +30,17 @@ protocol DetailMovieViewModelType : MovieViewModelType{
 
 class DetailMovieViewModel: MovieViewModel, DetailMovieViewModelType, DetailMovieViewModelInput, DetailMovieViewModelOutput{    
     
-    // MARK: Inputs & Outputs
+    // MARK: Inputs 
     var inputs: DetailMovieViewModelInput { return self }
     override var movieViewModelInputs: MovieViewModelInput { return inputs }
-    
+
+    // MARK: Output
     var outputs: DetailMovieViewModelOutput { return self }
     override var movieViewModelOutputs: MovieViewModelOutput { return outputs }
     
+    var originalTitle: Observable<String>!
+    var voteAverage: Observable<Double>!
+    var popularityText: Observable<Double>!
     
     // MARK: Init
     override init(
@@ -44,6 +50,18 @@ class DetailMovieViewModel: MovieViewModel, DetailMovieViewModelType, DetailMovi
         ) {
         
         super.init(movie: movie, service: service)
+        
+        originalTitle = movieStream
+            .map { $0.original_title  }
+            .unwrap()
+        
+        voteAverage = movieStream
+            .map { $0.vote_average  }
+            .unwrap()
+        
+        popularityText = movieStream
+            .map { $0.popularity  }
+            .unwrap()
         
     }
 }
