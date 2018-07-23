@@ -69,7 +69,6 @@ class DataService {
             query.text = string
             suggestion.queries.append(query)
     }
-
     
     private func deleteLastQuery(){
         guard let suggestion = realm.objects(Suggestion.self).first else   {
@@ -78,8 +77,4 @@ class DataService {
         suggestion.queries.removeFirst()
     }
 
-    
-    
-
-    
 }

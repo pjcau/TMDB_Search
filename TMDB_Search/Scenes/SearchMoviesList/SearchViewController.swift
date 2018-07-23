@@ -153,7 +153,7 @@ class SearchViewController: UIViewController, NibLoadable, BindableType {
     
     private func configureSuggestionsTableView(){
         dataTableView.register(cellType: SearchViewCell.self)
-        dataTableView.estimatedRowHeight = 450
+        dataTableView.estimatedRowHeight = 400
         dataTableView.tableFooterView = UIView()
         dataTableView.setContentOffset(.zero, animated: true)
     }
