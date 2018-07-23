@@ -92,16 +92,19 @@ class SearchViewController: UIViewController, NibLoadable, BindableType {
             .bind(to: inputs.loadMore)
             .disposed(by: disposeBag)
        
-        Observable.zip(dataTableView.rx.itemSelected, outputs.movies)
-            .subscribe({ event in
-                if let row = event.element?.0.row , let movies = event.element?.1{
-                    guard let movie = movies[safe:UInt(row)] else {
-                        return
-                    }
-                    inputs.movieDetailsAction.execute(movie)
-                }
-             })
-        .disposed(by: disposeBag)
+        dataTableView.rx.modelSelected(SearchViewCellModel.self)
+            .subscribe(onNext: { (model) in
+                inputs.movieDetailsAction.execute(model.outputs.movie)
+            })
+            .disposed(by: disposeBag)
+        
+        dataTableView.rx
+            .itemSelected
+            .subscribe(onNext:  { [weak self] indexPath in
+                self?.dataTableView.deselectRow(at: indexPath, animated: true)
+            })
+            .disposed(by: disposeBag)
+        
         
         // Create Suggestion Table
         let suggestionsDataSource = RxTableViewRealmDataSource<Query>(cellIdentifier: "QueryCell", cellType: QueryCell.self) {cell, ip, query in

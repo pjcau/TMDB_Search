@@ -23,6 +23,7 @@ protocol MovieViewModelOutput {
     var titlelabel: Observable<String>! { get }
     var dateRelease: Observable<String>! { get }
     var overviewText: Observable<String>! { get }
+    var movie: Movie! { get }
 }
 
 protocol MovieViewModelType {
@@ -58,7 +59,8 @@ class MovieViewModel: MovieViewModelType,
     var titlelabel: Observable<String>!
     var dateRelease: Observable<String>!
     var overviewText: Observable<String>!
-    
+    var movie: Movie!  
+
     let service: MovieServiceType
     let sceneCoordinator: SceneCoordinatorType
     
@@ -73,7 +75,7 @@ class MovieViewModel: MovieViewModelType,
         
         self.service = service
         self.sceneCoordinator = sceneCoordinator
-        
+        self.movie = movie
         movieStream = Observable.just(movie)
         
         smallPhoto = movieStream
