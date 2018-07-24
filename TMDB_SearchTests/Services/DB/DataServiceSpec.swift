@@ -5,8 +5,8 @@
 //  Created by Pierre jonny cau on 24/07/2018.
 //  Copyright © 2018 Pierre Jonny Cau. All rights reserved.
 //
-
 import XCTest
+import Foundation
 import Nimble
 import Quick
 import RealmSwift
@@ -62,7 +62,7 @@ class DataServiceSpec: QuickSpec {
                 guard let queriesDB = self.dataService.getSuggestionResult()?.queries else {
                     fatalError()
                 }
-                expect(queriesDB.count) ==  self.dataService.totalLastquery
+                expect(queriesDB.count) == self.dataService.totalLastquery
             }
         }
     }

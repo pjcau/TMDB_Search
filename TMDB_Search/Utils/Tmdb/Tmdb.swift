@@ -64,7 +64,15 @@ extension Tmdb: TargetType {
     }
 
     var sampleData: Data {
-        return Data()
+
+        switch self {
+        case .search(_, _):
+            guard let dataJSON = getSearchData() else {
+                return Data()
+            }
+
+            return dataJSON
+        }
     }
 
     var headers: [String : String]? {

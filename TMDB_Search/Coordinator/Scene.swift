@@ -22,7 +22,6 @@ enum Scene {
     case app
     case movieDetails(DetailMovieViewModel)
     case alert(AlertViewModel)
-
 }
 
 extension Scene: TargetScene {
