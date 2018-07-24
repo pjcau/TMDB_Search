@@ -41,7 +41,35 @@ class MovieServiceSpec: QuickSpec {
                 expect(message) == String(data: sampleData, encoding: .utf8)
             }
 
+            it("get array object from mock in RX") {
+
+                let service = MovieService(tmdb: provider)
+                let moviesObservbale = service.search(movieText: "jonny", byPageNumber: 1)
+                        .flatMap { result -> Observable<[Movie]> in
+                            switch result {
+                            case let .success(movies):
+                                if movies.count == 0 {
+                                    return .empty()
+                                }
+                                return .just(movies)
+                            case .error(_):
+                                return .empty()
+                            }
+                    }
+
+                do {
+                    guard let result = try moviesObservbale.toBlocking().first() else {
+                        fatalError()
+                    }
+                    expect(result.count) == 20
+                    expect(result).to(beAnInstanceOf([Movie].self))
+                    expect(result.first?.id) == 458_769
+
+                } catch {
+                    fatalError()
+                }
+            }
+
         }
     }
-
 }
