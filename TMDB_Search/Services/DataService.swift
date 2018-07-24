@@ -12,6 +12,8 @@ import RxSwift
 
 class DataService {
 
+    // MARK: Variables
+
     private let bag = DisposeBag()
     let totalLastquery = 10
     lazy var config: Realm.Configuration = {
@@ -30,9 +32,13 @@ class DataService {
         }
     }()
 
+    // MARK: Init
+
     init() {
         setupRealm()
     }
+
+    // MARK: Public Methods
 
     func addSuggestionQuery(_ string: String) {
         try! realm.write {
@@ -49,6 +55,21 @@ class DataService {
             }
         }
     }
+
+    func deleteDB() {
+        try! realm.write {
+            realm.deleteAll()
+        }
+    }
+
+    func getSuggestionResult() -> Suggestion? {
+        guard let suggestion = realm.objects(Suggestion.self).first else {
+            return nil
+        }
+        return suggestion
+    }
+
+    // MARK: Privacte Methods
 
     private func setupRealm() {
         try! realm.write {

@@ -41,16 +41,15 @@
 		5F00A6AF210700BD00933D14 /* UITextfield+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9496E920FCBA3800A5F875 /* UITextfield+Rx.swift */; };
 		5F00A6B0210700BD00933D14 /* UIScrollView+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FADBAD820F60FA200533715 /* UIScrollView+Extentions.swift */; };
 		5F00A6B1210700BD00933D14 /* Array+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9496F720FE79CC00A5F875 /* Array+Utilities.swift */; };
+		5F4C9D95210713CF0089A13D /* DataServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4C9D94210713CF0089A13D /* DataServiceSpec.swift */; };
+		5F4C9D97210715960089A13D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5FADBAB520F6057700533715 /* Info.plist */; };
 		5FADBA9F20F6057500533715 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FADBA9E20F6057500533715 /* AppDelegate.swift */; };
 		5FADBAA420F6057500533715 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FADBAA220F6057500533715 /* Main.storyboard */; };
 		5FADBAA620F6057700533715 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FADBAA520F6057700533715 /* Assets.xcassets */; };
 		5FADBAA920F6057700533715 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FADBAA720F6057700533715 /* LaunchScreen.storyboard */; };
-		5FADBAB420F6057700533715 /* CareemAssignmentJonnyCauTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FADBAB320F6057700533715 /* CareemAssignmentJonnyCauTests.swift */; };
 		5FADBAD720F60F7A00533715 /* BindableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FADBAD620F60F7A00533715 /* BindableType.swift */; };
-		9007D9DE5650C13D6CB767A9 /* Pods_CareemAssignmentJonnyCau.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FA6E8B71739F6B15B14A784 /* Pods_CareemAssignmentJonnyCau.framework */; };
 		B5F317ACEBCA015C929FAB2A /* Pods_TMDB_SearchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 901441A1EF0B31B27C11710E /* Pods_TMDB_SearchTests.framework */; };
 		E0FD7D969D90BB818933BA63 /* Pods_TMDB_Search.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B687BEFB09B04A9E3EB214 /* Pods_TMDB_Search.framework */; };
-		E9D7372DBB330EEF03824D62 /* Pods_CareemAssignmentJonnyCauTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 150969A9718ECD27D0940473 /* Pods_CareemAssignmentJonnyCauTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +68,7 @@
 		5F00A68D2107002200933D14 /* DetailMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMovieViewController.swift; sourceTree = "<group>"; };
 		5F00A68E2107002200933D14 /* DetailMovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMovieViewModel.swift; sourceTree = "<group>"; };
 		5F00A68F2107002200933D14 /* DetailMovieViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailMovieViewController.xib; sourceTree = "<group>"; };
+		5F4C9D94210713CF0089A13D /* DataServiceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataServiceSpec.swift; sourceTree = "<group>"; };
 		5F9496E720FCB1DE00A5F875 /* UISearchBar+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISearchBar+Rx.swift"; sourceTree = "<group>"; };
 		5F9496E920FCBA3800A5F875 /* UITextfield+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextfield+Rx.swift"; sourceTree = "<group>"; };
 		5F9496EB20FE3E2D00A5F875 /* Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
@@ -84,7 +84,6 @@
 		5FADBAA820F6057700533715 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5FADBAAA20F6057700533715 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5FADBAAF20F6057700533715 /* TMDB_SearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TMDB_SearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5FADBAB320F6057700533715 /* CareemAssignmentJonnyCauTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareemAssignmentJonnyCauTests.swift; sourceTree = "<group>"; };
 		5FADBAB520F6057700533715 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5FADBAC520F607DB00533715 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		5FADBAC620F607DB00533715 /* SceneCoodinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneCoodinator.swift; sourceTree = "<group>"; };
@@ -127,7 +126,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9007D9DE5650C13D6CB767A9 /* Pods_CareemAssignmentJonnyCau.framework in Frameworks */,
 				E0FD7D969D90BB818933BA63 /* Pods_TMDB_Search.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,7 +134,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9D7372DBB330EEF03824D62 /* Pods_CareemAssignmentJonnyCauTests.framework in Frameworks */,
 				B5F317ACEBCA015C929FAB2A /* Pods_TMDB_SearchTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -163,6 +160,58 @@
 				5F00A68F2107002200933D14 /* DetailMovieViewController.xib */,
 			);
 			path = DetailMovie;
+			sourceTree = "<group>";
+		};
+		5F00A6B321070EC800933D14 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5FADBAA220F6057500533715 /* Main.storyboard */,
+				5FADBAA520F6057700533715 /* Assets.xcassets */,
+				5FADBAA720F6057700533715 /* LaunchScreen.storyboard */,
+				5FADBAAA20F6057700533715 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5F00A6B42107112F00933D14 /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				5F9496EB20FE3E2D00A5F875 /* Query.swift */,
+				5F9496F120FE425E00A5F875 /* Suggestion.swift */,
+			);
+			path = DB;
+			sourceTree = "<group>";
+		};
+		5F00A6B52107112F00933D14 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				5FADBAE420F64D2C00533715 /* Movie.swift */,
+				5FADBAE620F64DA700533715 /* SearchMovie.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		5F00A6B6210711A700933D14 /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				5F4C9D94210713CF0089A13D /* DataServiceSpec.swift */,
+			);
+			path = DB;
+			sourceTree = "<group>";
+		};
+		5F00A6B7210711A700933D14 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		5F00A6B8210711A700933D14 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5F00A6B6210711A700933D14 /* DB */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		5FADBA9220F6057500533715 = {
@@ -194,10 +243,7 @@
 				5FADBAC120F6067F00533715 /* Scenes */,
 				5FADBAC220F6067F00533715 /* Services */,
 				5FADBAC320F6068000533715 /* Utils */,
-				5FADBAA220F6057500533715 /* Main.storyboard */,
-				5FADBAA520F6057700533715 /* Assets.xcassets */,
-				5FADBAA720F6057700533715 /* LaunchScreen.storyboard */,
-				5FADBAAA20F6057700533715 /* Info.plist */,
+				5F00A6B321070EC800933D14 /* Resources */,
 			);
 			path = TMDB_Search;
 			sourceTree = "<group>";
@@ -205,7 +251,8 @@
 		5FADBAB220F6057700533715 /* TMDB_SearchTests */ = {
 			isa = PBXGroup;
 			children = (
-				5FADBAB320F6057700533715 /* CareemAssignmentJonnyCauTests.swift */,
+				5F00A6B7210711A700933D14 /* Scene */,
+				5F00A6B8210711A700933D14 /* Services */,
 				5FADBAB520F6057700533715 /* Info.plist */,
 			);
 			path = TMDB_SearchTests;
@@ -233,10 +280,8 @@
 		5FADBAC020F6067F00533715 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				5FADBAE420F64D2C00533715 /* Movie.swift */,
-				5FADBAE620F64DA700533715 /* SearchMovie.swift */,
-				5F9496EB20FE3E2D00A5F875 /* Query.swift */,
-				5F9496F120FE425E00A5F875 /* Suggestion.swift */,
+				5F00A6B52107112F00933D14 /* Api */,
+				5F00A6B42107112F00933D14 /* DB */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -256,8 +301,8 @@
 			isa = PBXGroup;
 			children = (
 				5FADBAED20F676E000533715 /* Result.swift */,
-				5FADBAEF20F6772400533715 /* MovieService */,
 				5F9496EF20FE418200A5F875 /* DataService.swift */,
+				5FADBAEF20F6772400533715 /* MovieService */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -476,6 +521,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F4C9D97210715960089A13D /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,9 +534,18 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TMDB_SearchTests/Pods-TMDB_SearchTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -681,7 +736,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FADBAB420F6057700533715 /* CareemAssignmentJonnyCauTests.swift in Sources */,
+				5F4C9D95210713CF0089A13D /* DataServiceSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -835,13 +890,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DNG3JLER88;
-				INFOPLIST_FILE = "$(SRCROOT)/TMDB_Search/Info.plist";
+				DEVELOPMENT_TEAM = K68Z6X7QYS;
+				INFOPLIST_FILE = "$(SRCROOT)/TMDB_Search/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.cynny.TMDB-Search";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jonnycau.TMDB-Search";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -854,13 +909,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DNG3JLER88;
-				INFOPLIST_FILE = "$(SRCROOT)/TMDB_Search/Info.plist";
+				DEVELOPMENT_TEAM = K68Z6X7QYS;
+				INFOPLIST_FILE = "$(SRCROOT)/TMDB_Search/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.cynny.TMDB-Search";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jonnycau.TMDB-Search";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -874,14 +929,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DNG3JLER88;
-				INFOPLIST_FILE = CareemAssignmentJonnyCauTests/Info.plist;
+				DEVELOPMENT_TEAM = K68Z6X7QYS;
+				INFOPLIST_FILE = TMDB_SearchTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cynny..CareemAssignmentJonnyCauTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cynny.TMDB_SearchTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -896,14 +951,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DNG3JLER88;
-				INFOPLIST_FILE = CareemAssignmentJonnyCauTests/Info.plist;
+				DEVELOPMENT_TEAM = K68Z6X7QYS;
+				INFOPLIST_FILE = TMDB_SearchTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cynny..CareemAssignmentJonnyCauTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cynny.TMDB_SearchTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

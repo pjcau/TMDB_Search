@@ -52,6 +52,10 @@ target 'TMDB_Search' do
   target 'TMDB_SearchTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'Nimble'
+    pod 'Quick'
+    pod 'RxBlocking'
+    
   end
 
 end
