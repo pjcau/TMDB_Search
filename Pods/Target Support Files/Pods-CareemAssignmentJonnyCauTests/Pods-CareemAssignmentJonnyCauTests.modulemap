@@ -1,6 +1,0 @@
-framework module Pods_CareemAssignmentJonnyCauTests {
-  umbrella header "Pods-CareemAssignmentJonnyCauTests-umbrella.h"
-
-  export *
-  module * { export * }
-}

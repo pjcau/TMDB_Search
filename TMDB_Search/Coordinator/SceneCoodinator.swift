@@ -6,7 +6,6 @@
 //  Copyright © 2018 Pierre Jonny Cau. All rights reserved.
 //
 
-
 import UIKit
 import RxSwift
 import RxCocoa
@@ -16,9 +15,9 @@ import RxCocoa
  */
 
 class SceneCoordinator: NSObject, SceneCoordinatorType {
-    
+
     static var shared: SceneCoordinator!
-    
+
     fileprivate var window: UIWindow
     fileprivate var currentViewController: UIViewController {
         didSet {
@@ -28,19 +27,19 @@ class SceneCoordinator: NSObject, SceneCoordinatorType {
                 .setForwardToDelegate(self, retainDelegate: false)
         }
     }
-    
+
     required init(window: UIWindow) {
         self.window = window
         currentViewController = window.rootViewController!
     }
-    
+
     static func actualViewController(for viewController: UIViewController) -> UIViewController {
         if let navigationController = viewController as? UINavigationController {
             return navigationController.viewControllers.first!
         }
         return viewController
     }
-    
+
     @discardableResult
     func transition(to scene: TargetScene) -> Observable<Void> {
         let subject = PublishSubject<Void>()
@@ -78,11 +77,11 @@ class SceneCoordinator: NSObject, SceneCoordinatorType {
                 subject.onCompleted()
             }
         }
-        
+
         return subject.asObservable()
             .take(1)
     }
-    
+
     @discardableResult
     func pop(animated: Bool) -> Observable<Void> {
         let subject = PublishSubject<Void>()
@@ -92,23 +91,23 @@ class SceneCoordinator: NSObject, SceneCoordinatorType {
                 subject.onCompleted()
             }
         } else if let navigationController = currentViewController.navigationController {
-            
+
             _ = navigationController
                 .rx
                 .delegate
                 .sentMessage(#selector(UINavigationControllerDelegate.navigationController(_:didShow:animated:)))
                 .map { _ in }
                 .bind(to: subject)
-            
+
             guard navigationController.popViewController(animated: animated) != nil else {
                 fatalError("can't navigate back from \(currentViewController)")
             }
-            
+
             currentViewController = SceneCoordinator.actualViewController(for: navigationController.viewControllers.last!)
         } else {
             fatalError("Not a modal, no navigation controller: can't navigate back from \(currentViewController)")
         }
-        
+
         return subject.asObservable()
             .take(1)
             .ignoreAll()
@@ -126,7 +125,7 @@ extension SceneCoordinator: UINavigationControllerDelegate {
 // MARK: - UITabBarControllerDelegate
 
 extension SceneCoordinator: UITabBarControllerDelegate {
-    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController)  {
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         currentViewController = SceneCoordinator.actualViewController(for: viewController)
     }
 }

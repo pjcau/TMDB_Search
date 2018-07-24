@@ -9,26 +9,25 @@
 import Foundation
 import RxDataSources
 
-
 import Foundation
-struct Movie : Codable {
-    let vote_count : Int?
-    let id : Int?
-    let video : Bool?
-    let vote_average : Double?
-    let title : String?
-    let popularity : Double?
-    let poster_path : String?
-    let original_language : String?
-    let original_title : String?
-    let genre_ids : [Int]?
-    let backdrop_path : String?
-    let adult : Bool?
-    let overview : String?
-    let release_date : String?
-    
+struct Movie: Codable {
+    let vote_count: Int?
+    let id: Int?
+    let video: Bool?
+    let vote_average: Double?
+    let title: String?
+    let popularity: Double?
+    let poster_path: String?
+    let original_language: String?
+    let original_title: String?
+    let genre_ids: [Int]?
+    let backdrop_path: String?
+    let adult: Bool?
+    let overview: String?
+    let release_date: String?
+
     enum CodingKeys: String, CodingKey {
-        
+
         case vote_count = "vote_count"
         case id = "id"
         case video = "video"
@@ -44,7 +43,7 @@ struct Movie : Codable {
         case overview = "overview"
         case release_date = "release_date"
     }
-    
+
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         vote_count = try values.decodeIfPresent(Int.self, forKey: .vote_count)
@@ -64,20 +63,18 @@ struct Movie : Codable {
     }
 }
 
-
 extension Movie: IdentifiableType {
     typealias Identity = String
-    
+
     var identity: Identity {
         guard id != nil else { return "" }
-        return "\(String(describing: id))" 
+        return "\(String(describing: id))"
     }
 }
 
 extension Movie: Equatable {
     static func ==(lhs: Movie, rhs: Movie) -> Bool {
         return lhs.id == rhs.id &&
-            lhs.release_date == rhs.release_date 
+            lhs.release_date == rhs.release_date
     }
 }
-

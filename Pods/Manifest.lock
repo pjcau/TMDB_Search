@@ -21,11 +21,11 @@ PODS:
     - Moya/Core
     - RxSwift (~> 4.0)
   - Nuke (7.3)
-  - Realm (3.7.4):
-    - Realm/Headers (= 3.7.4)
-  - Realm/Headers (3.7.4)
-  - RealmSwift (3.7.4):
-    - Realm (= 3.7.4)
+  - Realm (3.7.5):
+    - Realm/Headers (= 3.7.5)
+  - Realm/Headers (3.7.5)
+  - RealmSwift (3.7.5):
+    - Realm (= 3.7.5)
   - Result (3.2.4)
   - Reusable (4.0.2):
     - Reusable/Storyboard (= 4.0.2)
@@ -56,6 +56,7 @@ PODS:
     - RxSwift (~> 4.0)
   - RxViewModel (5.1.0):
     - RxSwift (~> 4.0)
+  - SwiftLint (0.26.0)
 
 DEPENDENCIES:
   - Action
@@ -74,6 +75,7 @@ DEPENDENCIES:
   - RxSwift
   - RxSwiftExt
   - RxViewModel
+  - SwiftLint
 
 SPEC CHECKSUMS:
   Action: 3d9486d3da02b572b0a034b6c49ac4c3fbcc8b63
@@ -85,8 +87,8 @@ SPEC CHECKSUMS:
   Moya: a725035953bc1c0eb1be505ab903984501d82440
   Moya-ModelMapper: 35209257d9e886cedf91289559a41723f5fbd095
   Nuke: 3680b7186b18f84a5e9e283bfce4357bfd70fdf9
-  Realm: a469bb59e33f9926102ccaea4349822c53b9117e
-  RealmSwift: a45861b21c180f5cf0f122144b9759fa8dde3e9e
+  Realm: c286caf4dbf346ce24aad49ca76c7ce622d4a082
+  RealmSwift: 2a9281e37d6de55f66f76254d49d28aeb1b729e4
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   Reusable: 584a5629747c52e0f6a77841b400dc2643f6fa0f
   RxCocoa: 0b54909c902e1e581212a03e690bbd94032d8baa
@@ -97,7 +99,8 @@ SPEC CHECKSUMS:
   RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
   RxSwiftExt: 81afb48ab0602f503147417baeb3989d64c7687d
   RxViewModel: fb8b3f73dafb72f1fd02af2fb48e97f0133a838d
+  SwiftLint: f6b83e8d95ee1e91e11932d843af4fdcbf3fc764
 
-PODFILE CHECKSUM: 485485ee23c919473d2ce21ff5c568e3d4fa6b4a
+PODFILE CHECKSUM: 2a1b9f8d2616d698b3f579e0c04527b016c03fff
 
 COCOAPODS: 1.4.0

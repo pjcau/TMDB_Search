@@ -55,6 +55,3 @@ private extension PrimitiveSequence where Trait == SingleTrait {
             .catchError { _ in .empty() }
     }
 }
-
-
-

@@ -12,52 +12,51 @@ import Nuke
 import Hero
 import Reusable
 
-
 class SearchViewCell: UITableViewCell, BindableType, NibReusable {
-    
+
     // MARK: ViewModel
     var viewModel: SearchViewCellModelType!
-    
+
     // MARK: IBOutlets
     @IBOutlet var moviePosterImageView: UIImageView!
     @IBOutlet var movieTitleLabel: UILabel!
     @IBOutlet var releaseDateLabel: UILabel!
     @IBOutlet var fullOverviewLabel: UILabel!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
-    
+
     // MARK: Private
     private static let imagePipeline = Nuke.ImagePipeline.shared
     private var disposeBag = DisposeBag()
-    private let radius :CGFloat = 10.0
-    
+    private let radius: CGFloat = 10.0
+
     // MARK: Overrides
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         movieTitleLabel.layer.cornerRadius = radius
         movieTitleLabel?.layer.masksToBounds = true
-        
+
         releaseDateLabel.layer.cornerRadius = radius
         releaseDateLabel?.layer.masksToBounds = true
-        
+
         fullOverviewLabel.layer.cornerRadius = radius
         fullOverviewLabel?.layer.masksToBounds = true
     }
-    
+
     override func prepareForReuse() {
         super.prepareForReuse()
-        
+
         moviePosterImageView.image = nil
         disposeBag = DisposeBag()
     }
-    
+
     // MARK: BindableType
-    
+
     func bindViewModel() {
-       _  = viewModel.inputs
+       _ = viewModel.inputs
         let outputs = viewModel.outputs
         let this = SearchViewCell.self
-        
+
         Observable.concat(outputs.smallPhoto, outputs.regularPhoto, outputs.hightPhoto)
             .mapToURL()
             .flatMap { this.imagePipeline.rx.loadImage(with: $0) }
@@ -67,19 +66,19 @@ class SearchViewCell: UITableViewCell, BindableType, NibReusable {
             }
             .bind(to: moviePosterImageView.rx.image)
             .disposed(by: disposeBag)
-        
+
         outputs.titlelabel
             .bind(to: movieTitleLabel.rx.text)
             .disposed(by: disposeBag)
-        
+
         outputs.dateRelease
             .bind(to: releaseDateLabel.rx.text)
             .disposed(by: disposeBag)
-        
+
         outputs.overviewText
             .bind(to: fullOverviewLabel.rx.text)
             .disposed(by: disposeBag)
 
     }
-    
+
 }

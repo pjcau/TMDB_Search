@@ -1,0 +1,6 @@
+framework module Pods_TMDB_Search {
+  umbrella header "Pods-TMDB_Search-umbrella.h"
+
+  export *
+  module * { export * }
+}

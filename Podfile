@@ -1,7 +1,7 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
-target 'CareemAssignmentJonnyCau' do
+target 'TMDB_Search' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
@@ -45,8 +45,11 @@ target 'CareemAssignmentJonnyCau' do
     # ProgressHud
     pod 'JGProgressHUD'
     
+    # Swift Lint
+    pod 'SwiftLint'
+    
 
-  target 'CareemAssignmentJonnyCauTests' do
+  target 'TMDB_SearchTests' do
     inherit! :search_paths
     # Pods for testing
   end

@@ -20,6 +20,7 @@ protocol TargetScene {
 
 enum Scene {
     case app
+    case movieDetails(DetailMovieViewModel)
     case alert(AlertViewModel)
 
 }
@@ -34,15 +35,21 @@ extension Scene: TargetScene {
             let rootHomeVC = UINavigationController(rootViewController: mainVC)
             mainVC.bind(to: SearchViewModel())
             return .root(rootHomeVC)
-            
-        case let .alert(viewModel):
-            // MARK: AlertViewController
 
+        case let .movieDetails(viewModel):
+
+            // MARK: DetailMovieViewController
+            var detail = DetailMovieViewController()
+            detail.bind(to: viewModel)
+            return .push(detail)
+
+        case let .alert(viewModel):
+
+            // MARK: AlertViewController
             var vc = AlertViewController(title: nil, message: nil, preferredStyle: .alert)
             vc.bind(to: viewModel)
             return .alert(vc)
         }
-       
+
     }
 }
-

@@ -11,39 +11,37 @@ import RealmSwift
 import RxSwift
 
 class DataService {
-    
+
     private let bag = DisposeBag()
     let totalLastquery = 10
     lazy var config: Realm.Configuration = {
         var config = Realm.Configuration.defaultConfiguration
         return config
     }()
-    
+
     private lazy var realm: Realm = {
         let realm: Realm
         do {
             realm = try Realm(configuration: self.config)
             return realm
-        }
-        catch let e {
+        } catch let e {
             print(e)
             fatalError()
         }
     }()
-    
+
     init() {
         setupRealm()
     }
-    
-    
-    func addSuggestionQuery(_ string:String) {
+
+    func addSuggestionQuery(_ string: String) {
         try! realm.write {
-            guard let suggestion = realm.objects(Suggestion.self).first else   {
+            guard let suggestion = realm.objects(Suggestion.self).first else {
                 return
             }
             let query = string.trimmingCharacters(in: NSCharacterSet.whitespaces)
-            
-            if !suggestion.queries.contains(where: {$0.text == query}) {
+
+            if !suggestion.queries.contains(where: { $0.text == query }) {
                 if totalLastquery <= suggestion.queries.count {
                     deleteLastQuery()
                 }
@@ -51,7 +49,7 @@ class DataService {
             }
         }
     }
-    
+
     private func setupRealm() {
         try! realm.write {
             guard realm.objects(Suggestion.self).first != nil else {
@@ -60,18 +58,18 @@ class DataService {
             }
         }
     }
-    
-    private func createQuery(_ string:String){
-            guard let suggestion = realm.objects(Suggestion.self).first else   {
+
+    private func createQuery(_ string: String) {
+            guard let suggestion = realm.objects(Suggestion.self).first else {
                 return
             }
             let query = Query()
             query.text = string
             suggestion.queries.append(query)
     }
-    
-    private func deleteLastQuery(){
-        guard let suggestion = realm.objects(Suggestion.self).first else   {
+
+    private func deleteLastQuery() {
+        guard let suggestion = realm.objects(Suggestion.self).first else {
             return
         }
         suggestion.queries.removeFirst()
