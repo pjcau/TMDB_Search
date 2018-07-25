@@ -63,12 +63,13 @@ class SearchViewCell: UITableViewCell, BindableType, NibReusable {
 
         Observable.concat(outputs.smallPhoto, outputs.regularPhoto, outputs.hightPhoto)
             .mapToURL()
+            .observeOn(SerialDispatchQueueScheduler(qos: .background))
             .flatMap { this.imagePipeline.rx.loadImage(with: $0) }
             .map { $0.image }
-            .flatMapIgnore { [unowned self] _ in
-                Observable.just(self.activityIndicator.stopAnimating())
+            .observeOn(MainScheduler.instance)
+            .flatMapIgnore { [weak self] _ in
+                Observable.just(self?.activityIndicator.stopAnimating())
             }
-            .subscribeOn(MainScheduler.asyncInstance)
             .bind(to: moviePosterImageView.rx.image)
             .disposed(by: disposeBag)
 

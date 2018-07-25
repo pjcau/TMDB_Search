@@ -39,9 +39,7 @@ public extension Reactive where Base: ImagePipeline {
                     }
                 }
                 return Disposables.create {
-                    DispatchQueue.global(qos: .background).async {
-                          task.cancel()
-                    }
+                    task.cancel()
                 }
             }
         }

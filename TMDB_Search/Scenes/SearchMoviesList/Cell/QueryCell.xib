@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="QueryCell" id="YBH-fS-fyz" customClass="QueryCell" customModule="CareemAssignmentJonnyCau" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="QueryCell" id="YBH-fS-fyz" customClass="QueryCell" customModule="TMDB_Search" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YBH-fS-fyz" id="zMJ-tL-w7k">
@@ -28,9 +28,9 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="Rjq-7N-DiE" firstAttribute="top" secondItem="zMJ-tL-w7k" secondAttribute="topMargin" id="1yG-wg-tDa"/>
-                    <constraint firstItem="Rjq-7N-DiE" firstAttribute="centerY" secondItem="zMJ-tL-w7k" secondAttribute="centerY" id="5wV-de-44I"/>
+                    <constraint firstItem="Rjq-7N-DiE" firstAttribute="centerY" secondItem="zMJ-tL-w7k" secondAttribute="centerY" priority="999" id="5wV-de-44I"/>
                     <constraint firstAttribute="bottomMargin" secondItem="Rjq-7N-DiE" secondAttribute="bottom" id="D9O-92-xqG"/>
-                    <constraint firstItem="Rjq-7N-DiE" firstAttribute="centerX" secondItem="zMJ-tL-w7k" secondAttribute="centerX" id="Df3-KV-0pB"/>
+                    <constraint firstItem="Rjq-7N-DiE" firstAttribute="centerX" secondItem="zMJ-tL-w7k" secondAttribute="centerX" priority="999" id="Df3-KV-0pB"/>
                     <constraint firstItem="Rjq-7N-DiE" firstAttribute="leading" secondItem="zMJ-tL-w7k" secondAttribute="leadingMargin" id="mhe-nI-ePc"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Rjq-7N-DiE" secondAttribute="trailing" id="uDq-AW-Q3S"/>
                 </constraints>
