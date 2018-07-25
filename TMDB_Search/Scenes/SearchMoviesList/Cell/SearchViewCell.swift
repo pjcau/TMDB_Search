@@ -61,12 +61,10 @@ class SearchViewCell: UITableViewCell, BindableType, NibReusable {
         let outputs = viewModel.outputs
         let this = SearchViewCell.self
 
-        Observable.concat(outputs.smallPhoto, outputs.regularPhoto, outputs.hightPhoto)
+        Observable.concat( outputs.regularPhoto, outputs.hightPhoto)
             .mapToURL()
-            .observeOn(SerialDispatchQueueScheduler(qos: .background))
             .flatMap { this.imagePipeline.rx.loadImage(with: $0) }
             .map { $0.image }
-            .observeOn(MainScheduler.instance)
             .flatMapIgnore { [weak self] _ in
                 Observable.just(self?.activityIndicator.stopAnimating())
             }
