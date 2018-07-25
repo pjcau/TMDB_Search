@@ -46,7 +46,11 @@ class SearchViewCell: UITableViewCell, BindableType, NibReusable {
     override func prepareForReuse() {
         super.prepareForReuse()
 
+        movieTitleLabel.text = nil
+        releaseDateLabel.text = nil
+        fullOverviewLabel.text = nil
         moviePosterImageView.image = nil
+
         disposeBag = DisposeBag()
     }
 
@@ -64,6 +68,7 @@ class SearchViewCell: UITableViewCell, BindableType, NibReusable {
             .flatMapIgnore { [unowned self] _ in
                 Observable.just(self.activityIndicator.stopAnimating())
             }
+            .subscribeOn(MainScheduler.asyncInstance)
             .bind(to: moviePosterImageView.rx.image)
             .disposed(by: disposeBag)
 

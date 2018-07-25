@@ -42,7 +42,6 @@
 		5F00A6B0210700BD00933D14 /* UIScrollView+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FADBAD820F60FA200533715 /* UIScrollView+Extentions.swift */; };
 		5F00A6B1210700BD00933D14 /* Array+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9496F720FE79CC00A5F875 /* Array+Utilities.swift */; };
 		5F4C9D95210713CF0089A13D /* DataServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4C9D94210713CF0089A13D /* DataServiceSpec.swift */; };
-		5F4C9D97210715960089A13D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5FADBAB520F6057700533715 /* Info.plist */; };
 		5F4C9D9A210743270089A13D /* SceneCoordinatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4C9D99210743270089A13D /* SceneCoordinatorSpec.swift */; };
 		5F4C9D9F21074BC60089A13D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4C9D9E21074BC60089A13D /* main.swift */; };
 		5F4C9DA1210766C60089A13D /* MovieServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4C9DA0210766C60089A13D /* MovieServiceSpec.swift */; };
@@ -578,7 +577,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F4C9D97210715960089A13D /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1000,7 +998,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cynny.TMDB_SearchTests;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cynny.TMDB-SearchTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1022,7 +1020,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cynny.TMDB_SearchTests;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cynny.TMDB-SearchTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

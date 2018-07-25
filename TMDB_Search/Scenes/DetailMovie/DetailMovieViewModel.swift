@@ -44,7 +44,7 @@ class DetailMovieViewModel: MovieViewModel, DetailMovieViewModelType, DetailMovi
     // MARK: Init
     override init(
         movie: Movie,
-        service: MovieServiceType = MovieService(),
+        service: MovieServiceType? = MovieService(),
         sceneCoordinator: SceneCoordinatorType = SceneCoordinator.shared
         ) {
 

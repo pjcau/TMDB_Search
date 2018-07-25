@@ -38,7 +38,11 @@ public extension Reactive where Base: ImagePipeline {
                         single(.error(error ?? ImagePipeline.Error.processingFailed)) // error always non-nil
                     }
                 }
-                return Disposables.create { task.cancel() }
+                return Disposables.create {
+                    DispatchQueue.global(qos: .background).async {
+                          task.cancel()
+                    }
+                }
             }
         }
     }

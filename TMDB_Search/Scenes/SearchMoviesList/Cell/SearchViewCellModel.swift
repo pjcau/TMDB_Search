@@ -42,11 +42,11 @@ class SearchViewCellModel: MovieViewModel,
     // MARK: Init
     override init(
         movie: Movie,
-        service: MovieServiceType = MovieService(),
+        service: MovieServiceType? = nil,
         sceneCoordinator: SceneCoordinatorType = SceneCoordinator.shared
         ) {
 
-        super.init(movie: movie, service: service)
+        super.init(movie: movie, service: nil)
 
         }
 }

@@ -25,7 +25,6 @@ struct MovieService: MovieServiceType {
                     perPage: pageNumber
                     )
                 )
-                .filterSuccessfulStatusCodes()
                 .map(SearchMovie.self)
                 .map { $0.results }
                 .asObservable()

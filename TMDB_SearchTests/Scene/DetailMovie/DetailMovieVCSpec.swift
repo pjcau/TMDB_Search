@@ -139,14 +139,14 @@ class DetailMovieVCSpec: QuickSpec {
                     fatalError()
                 }
             }
-            
+
             it("M_Observable_regularPhoto") {
                 do {
                     guard let result = try detailVC.viewModel.outputs.regularPhoto.toBlocking().first() else {
                         fatalError()
                     }
                     expect(result) == ImageUtils().getImage(mockMovie.poster_path, format: .medium)
-                    
+
                 } catch {
                     fatalError()
                 }
@@ -158,7 +158,7 @@ class DetailMovieVCSpec: QuickSpec {
                         fatalError()
                     }
                     expect(result) == ImageUtils().getImage(mockMovie.poster_path, format: .large)
-                    
+
                 } catch {
                     fatalError()
                 }

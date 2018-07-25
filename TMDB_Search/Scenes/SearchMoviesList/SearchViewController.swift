@@ -169,9 +169,9 @@ class SearchViewController: UIViewController, NibLoadable, BindableType {
 
     private func configureMoviesTableView() {
         suggestionsTableView.register(cellType: QueryCell.self)
-        suggestionsTableView.estimatedRowHeight = 450
-        suggestionsTableView.tableFooterView = UIView()
-        suggestionsTableView.setContentOffset(.zero, animated: true)
+        //suggestionsTableView.estimatedRowHeight = 450
+        //suggestionsTableView.tableFooterView = UIView()
+        suggestionsTableView.setContentOffset(.zero, animated: false)
 
         dataSourceMovies = RxTableViewSectionedReloadDataSource<SearchSectionModel>(
             configureCell:  tableViewDataSource

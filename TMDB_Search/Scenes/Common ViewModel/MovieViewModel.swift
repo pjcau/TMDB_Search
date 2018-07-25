@@ -60,7 +60,7 @@ class MovieViewModel: MovieViewModelType,
     var overviewText: Observable<String>!
     var movie: Movie!
 
-    let service: MovieServiceType
+    var service: MovieServiceType?
     let sceneCoordinator: SceneCoordinatorType
 
     // MARK: Private
@@ -69,10 +69,13 @@ class MovieViewModel: MovieViewModelType,
 
     // MARK: Init
     init(movie: Movie,
-         service: MovieServiceType = MovieService(),
+         service: MovieServiceType? = nil,
          sceneCoordinator: SceneCoordinatorType = SceneCoordinator.shared) {
 
-        self.service = service
+        if let service = service {
+            self.service = service
+        }
+
         self.sceneCoordinator = sceneCoordinator
         self.movie = movie
         movieStream = Observable.just(movie)
