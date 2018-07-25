@@ -18,9 +18,6 @@ protocol SearchViewModelInput {
     /// Call when the bottom of the list is reached
     var loadMore: BehaviorSubject<Bool> { get }
 
-    /// Call when an alert is invoked
-    var alertAction: Action<String, Void> { get }
-
     // call when write
     var searchString: BehaviorSubject<String?> { get }
 

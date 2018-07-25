@@ -78,15 +78,15 @@ class MovieViewModel: MovieViewModelType,
         movieStream = Observable.just(movie)
 
         smallPhoto = movieStream
-            .map { self.getImage($0.poster_path, format: .small) }
+            .map { ImageUtils().getImage($0.poster_path, format: .small) }
             .unwrap()
 
         regularPhoto = movieStream
-            .map { self.getImage($0.poster_path, format: .medium) }
+            .map { ImageUtils().getImage($0.poster_path, format: .medium) }
             .unwrap()
 
         hightPhoto = movieStream
-            .map { self.getImage($0.poster_path, format: .large) }
+            .map { ImageUtils().getImage($0.poster_path, format: .large) }
             .unwrap()
 
         titlelabel = movieStream
@@ -102,19 +102,4 @@ class MovieViewModel: MovieViewModelType,
             .unwrap()
 
     }
-}
-
-enum FormatImage: String {
-    case small = "w92",
-    medium = "w185",
-    large = "w500",
-    extraLarge = "w780"
-}
-
-extension MovieViewModel {
-
-    func getImage(_ pathImage: String?, format: FormatImage = .medium) -> String {
-        return "https://image.tmdb.org/t/p/" + format.rawValue + (pathImage ?? "")
-    }
-
 }

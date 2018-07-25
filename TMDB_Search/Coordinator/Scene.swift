@@ -22,6 +22,7 @@ enum Scene {
     case app
     case movieDetails(DetailMovieViewModel)
     case alert(AlertViewModel)
+    case mockApp
 }
 
 extension Scene: TargetScene {
@@ -48,7 +49,13 @@ extension Scene: TargetScene {
             var vc = AlertViewController(title: nil, message: nil, preferredStyle: .alert)
             vc.bind(to: viewModel)
             return .alert(vc)
-        }
 
+        case .mockApp:
+
+            // MARK: mock App
+            let mainVC = UIViewController()
+            let rootHomeVC = UINavigationController(rootViewController: mainVC)
+            return .root(rootHomeVC)
+        }
     }
 }

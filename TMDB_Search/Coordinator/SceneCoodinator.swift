@@ -19,7 +19,7 @@ class SceneCoordinator: NSObject, SceneCoordinatorType {
     static var shared: SceneCoordinator!
 
     fileprivate var window: UIWindow
-    fileprivate var currentViewController: UIViewController {
+    private(set) var currentViewController: UIViewController {
         didSet {
             currentViewController.navigationController?.rx.delegate
                 .setForwardToDelegate(self, retainDelegate: false)

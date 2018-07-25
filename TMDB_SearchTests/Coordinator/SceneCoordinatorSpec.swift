@@ -25,11 +25,16 @@ class SceneCoordinatorSpec: QuickSpec {
         describe("SceneCoordinator") {
             it("A_Init") {
                 self.window.rootViewController = UIViewController()
-
                 self.sceneCoordinator = SceneCoordinator(window: self.window)
 
                 SceneCoordinator.shared = self.sceneCoordinator
                 expect(self.sceneCoordinator).to(beAnInstanceOf(SceneCoordinator.self))
+            }
+
+            it("B_transistion_root") {
+                // MARK: Mock the transition
+                self.sceneCoordinator?.transition(to: Scene.mockApp)
+                expect(self.sceneCoordinator?.currentViewController).to(beAnInstanceOf(UIViewController.self))
             }
         }
     }

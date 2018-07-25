@@ -9,7 +9,6 @@
 import Foundation
 import RxDataSources
 
-import Foundation
 struct Movie: Codable {
     let vote_count: Int?
     let id: Int?
@@ -61,6 +60,39 @@ struct Movie: Codable {
         overview = try values.decodeIfPresent(String.self, forKey: .overview)
         release_date = try values.decodeIfPresent(String.self, forKey: .release_date)
     }
+
+    init( vote_count: Int?,
+      id: Int?,
+      video: Bool?,
+      vote_average: Double?,
+      title: String?,
+      popularity: Double?,
+      poster_path: String?,
+      original_language: String?,
+      original_title: String?,
+      genre_ids: [Int]?,
+      backdrop_path: String?,
+      adult: Bool?,
+      overview: String?,
+      release_date: String?) {
+
+        self.vote_count = vote_count
+        self.id = vote_count
+        self.video = video
+        self.vote_average = vote_average
+        self.title = title
+        self.popularity = popularity
+        self.poster_path = poster_path
+        self.original_language = original_language
+        self.original_title = original_title
+        self.genre_ids = genre_ids
+        self.backdrop_path = backdrop_path
+        self.adult = adult
+        self.overview = overview
+        self.release_date = release_date
+
+    }
+
 }
 
 extension Movie: IdentifiableType {
